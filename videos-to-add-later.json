@@ -1,0 +1,115 @@
+[
+  {
+    "project_id": "event-highlights",
+    "videos": [
+      {
+        "src": "assets/event-video-01.mp4",
+        "poster": "assets/event-video-01.webp",
+        "label": "Consulting Championship / 2025 / Event highlights",
+        "source": "aramco consulting championship.mp4",
+        "duration": "1:35"
+      },
+      {
+        "src": "assets/event-video-02.mp4",
+        "poster": "assets/event-video-02.webp",
+        "label": "Event highlights",
+        "source": "WhatsApp Video 2025-07-23 at 12.18.53 PM.mp4",
+        "duration": "0:41"
+      },
+      {
+        "src": "assets/event-video-03.mp4",
+        "poster": "assets/event-video-03.webp",
+        "label": "College Fair / College fair / Event film",
+        "source": "Aramco college fair.mp4",
+        "duration": "0:50"
+      },
+      {
+        "src": "assets/event-video-04.mp4",
+        "poster": "assets/event-video-04.webp",
+        "label": "TeraPOWERS / Booth walkthrough / View 1",
+        "source": "ASHKAR0166.MP4",
+        "duration": "0:08"
+      },
+      {
+        "src": "assets/event-video-05.mp4",
+        "poster": "assets/event-video-05.webp",
+        "label": "TeraPOWERS / Booth walkthrough / View 2",
+        "source": "ASHKAR0164.MP4",
+        "duration": "0:10"
+      },
+      {
+        "src": "assets/event-video-06.mp4",
+        "poster": "assets/event-video-06.webp",
+        "label": "HUGRS Recognition Ceremony / Entrance arch and flags",
+        "source": "MVI_1208.MOV",
+        "duration": "0:10"
+      },
+      {
+        "src": "assets/event-video-07.mp4",
+        "poster": "assets/event-video-07.webp",
+        "label": "HUGRS Recognition Ceremony / Welcome signage",
+        "source": "MVI_1197.MOV",
+        "duration": "0:07"
+      },
+      {
+        "src": "assets/event-video-08.mp4",
+        "poster": "assets/event-video-08.webp",
+        "label": "HUGRS Recognition Ceremony / Stage walkthrough",
+        "source": "MVI_1194.MOV",
+        "duration": "0:08"
+      },
+      {
+        "src": "assets/event-video-09.mp4",
+        "poster": "assets/event-video-09.webp",
+        "label": "Contractor Recognition / Stage setup",
+        "source": "MVI_1217.MOV",
+        "duration": "0:13"
+      },
+      {
+        "src": "assets/event-video-13.mp4",
+        "poster": "assets/event-video-13.webp",
+        "label": "HUGRS Recognition Ceremony / Outdoor entrance",
+        "source": "MVI_1189.MOV",
+        "duration": "0:08"
+      },
+      {
+        "src": "assets/event-final-forum.mp4",
+        "poster": "assets/event-final-forum.webp",
+        "label": "Forum / Event film",
+        "source": "final forum.mp4",
+        "duration": "3:51"
+      },
+      {
+        "src": "assets/future-engineering-event-1.mp4",
+        "poster": "assets/future-engineering-event-1.webp",
+        "label": "Future of Engineering / Exhibitor walkway",
+        "duration": "0:13"
+      },
+      {
+        "src": "assets/future-engineering-event-2.mp4",
+        "poster": "assets/future-engineering-event-2.webp",
+        "label": "Future of Engineering / Entrance and exhibition",
+        "duration": "0:04"
+      },
+      {
+        "src": "assets/mega-program-display-walkthrough.mp4",
+        "poster": "assets/mega-program-display-walkthrough.webp",
+        "label": "Mega Program\u2019s Completion Ceremony / Illuminated displays",
+        "duration": "0:16"
+      },
+      {
+        "src": "assets/mega-program-ceremony-branding.mp4",
+        "poster": "assets/mega-program-ceremony-branding.webp",
+        "label": "Mega Program\u2019s Completion Ceremony / Branded reception",
+        "duration": "0:11"
+      },
+      {
+        "src": "assets/terapowers-upload-walkthrough.mp4",
+        "poster": "assets/terapowers-upload-walkthrough.webp",
+        "label": "TeraPOWERS / Event walkthrough",
+        "source": "1000346076.mp4",
+        "duration": "0:33"
+      }
+    ]
+  }
+]

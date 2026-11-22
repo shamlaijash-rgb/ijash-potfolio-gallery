@@ -1,0 +1,14 @@
+{
+  "name": "ij-designz-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -c server.js && node -c dist/gallery-experience.js && node -c dist/brief-flow.mjs",
+    "lint": "node -c server.js && node -c dist/gallery-experience.js && node -c dist/brief-flow.mjs"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

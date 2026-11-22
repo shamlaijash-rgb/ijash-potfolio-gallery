@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ijashul Haque — Exhibition &amp; 3D Spatial Portfolio</title>
+  <meta name="description" content="Ijashul Haque’s design portfolio: exhibition booth design, event stages, 3D modelling, presentation renders and recognition trophy concepts." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://ijas-design-portfolio.shamlaijash.chatgpt.site/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ijashul Haque" />
+  <meta property="og:title" content="Ijashul Haque — Exhibition &amp; 3D Spatial Portfolio" />
+  <meta property="og:description" content="Ijashul Haque’s design portfolio: exhibition booth design, event stages, 3D modelling, presentation renders and recognition trophy concepts." />
+  <meta property="og:url" content="https://ijas-design-portfolio.shamlaijash.chatgpt.site/" />
+  <meta property="og:image" content="https://ijas-design-portfolio.shamlaijash.chatgpt.site/assets/ncms-1.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#FFF9EC" />
+  <link rel="icon" href="favicon.svg" />
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="gallery-experience.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- 1. Top Navigation -->
+  <header class="nav">
+    <a href="#gallery" class="nav-logo" id="nav-logo" style="--intro-i: 5;">Ijashul Haque</a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#gallery" class="nav-link is-active" data-nav="gallery" style="--intro-i: 6;">Gallery</a>
+      <a href="#list" class="nav-link" data-nav="list" style="--intro-i: 7;">Archive</a>
+      <a href="#about" class="nav-link" data-nav="info" style="--intro-i: 8;">About</a>
+      <a href="#brief" class="nav-link" data-nav="enquire" style="--intro-i: 9;">Enquire</a>
+    </nav>
+
+    <div class="nav-right">
+      <button type="button" class="nav-search" id="nav-search-btn" aria-label="Search portfolio projects" style="--intro-i: 10;">
+        <span class="nav-search-left">
+          <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+          <span class="nav-search-placeholder">Search…</span>
+        </span>
+        <kbd class="nav-kbd">⌘K</kbd>
+      </button>
+
+      <div class="nav-cat-wrap" style="--intro-i: 11;">
+        <button type="button" class="nav-cat-pill" id="nav-cat-pill" aria-haspopup="true" aria-expanded="false">
+          <span id="nav-cat-label">ALL · 40</span>
+          <svg width="8" height="8" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="m1 1 4 4 4-4"></path>
+          </svg>
+        </button>
+        <div class="nav-cat-menu" id="nav-cat-menu" role="menu"></div>
+      </div>
+
+      <button type="button" class="nav-icon-btn" id="nav-about-icon" aria-label="Designer profile and contact" style="--intro-i: 12;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c1.8-3.8 5-5.5 8-5.5s6.2 1.7 8 5.5"></path>
+        </svg>
+      </button>
+
+      <button type="button" class="nav-icon-btn" id="nav-saved-icon" aria-label="Saved shortlist projects" style="--intro-i: 13;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M12 20.5s-7-4.6-7-10a4.2 4.2 0 0 1 7-3.1 4.2 4.2 0 0 1 7 3.1c0 5.4-7 10-7 10Z"></path>
+        </svg>
+      </button>
+
+      <button type="button" class="nav-icon-btn" id="nav-brief-icon" aria-label="Open project enquiry brief" style="--intro-i: 14;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M6 8h12l1 12H5L6 8Z"></path>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+        </svg>
+        <span class="nav-badge" id="brief-badge" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. 3D Curved Gallery Canvas & Veil -->
+  <main id="gallery" aria-label="3D curved exhibition gallery">
+    <div id="veil" aria-hidden="true"></div>
+    <div id="webgl-fallback" role="region" aria-label="Archive fallback">
+      <div class="fallback-card">
+        <h2>Ijashul Haque — 3D &amp; Exhibition Archive</h2>
+        <p>
+          Explore all 40 exhibition booth concepts, event stages, installations, and recognition trophies by Ijashul Haque in the full catalogue view.
+        </p>
+        <button type="button" class="btn-ink" id="fallback-archive-btn">Enter the archive →</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. Gallery HUD -->
+  <div class="gui">
+    <div class="gui-arrows">
+      <button type="button" class="gui-arrow" id="arrow-prev" aria-label="Previous project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M19 12H5M11 6l-6 6 6 6"></path>
+        </svg>
+      </button>
+      <button type="button" class="gui-arrow" id="arrow-next" aria-label="Next project">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="gui-hint">
+      <span class="mask-line"><span class="mask-inner" id="hint-line-1" style="--intro-i: 0;">Scroll or drag to walk round</span></span>
+      <span class="mask-line"><span class="mask-inner" id="hint-line-2" style="--intro-i: 1;">Click a project to look closer</span></span>
+    </div>
+
+    <div class="gui-toggle" role="group" aria-label="View mode">
+      <button type="button" class="gui-toggle-btn is-active" id="toggle-gallery">GALLERY</button>
+      <button type="button" class="gui-toggle-btn" id="toggle-list">LIST</button>
+    </div>
+
+    <div class="gui-caption">
+      <p class="gui-kicker">
+        <span class="mask-line"><span class="mask-inner" style="--intro-i: 2;">YOU ARE WALKING PAST</span></span>
+      </p>
+      <div class="gui-headline-row">
+        <h1 class="gui-h1">
+          <span class="mask-line"><span class="mask-inner" style="--intro-i: 3;">IJASHUL HAQUE</span></span>
+        </h1>
+        <a href="#list" class="gui-enter-link" id="enter-archive-link">
+          <span class="mask-line"><span class="mask-inner" style="--intro-i: 4;">ENTER THE ARCHIVE →</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Focus Hover Pill -->
+  <div id="open-pill" aria-hidden="true">OPEN PROJECT</div>
+
+  <!-- 5. Project Detail Page -->
+  <section id="page" aria-label="Project details">
+    <div class="page-wrap">
+      <div class="page-grid">
+        <div class="page-left">
+          <div class="page-art-frame" id="page-art-frame" title="Click to open fullscreen">
+            <img id="page-main-img" src="" alt="" referrerpolicy="no-referrer" />
+          </div>
+          <div class="page-meta-row" id="page-meta-row">
+            <span id="page-counter">1 / 1</span>
+            <button type="button" class="page-meta-btn" id="page-fullscreen-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"></path>
+                <path d="M4 7.5 12 12l8-4.5M12 12v9"></path>
+              </svg>
+              <span>View full frame</span>
+            </button>
+            <button type="button" class="page-meta-btn" id="page-save-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M6 4h12v17l-6-4-6 4V4Z"></path>
+              </svg>
+              <span>Save</span>
+            </button>
+          </div>
+          <div class="page-thumbs" id="page-thumbs" aria-label="Project gallery thumbnails"></div>
+        </div>
+
+        <div class="page-right" id="page-right">
+          <div class="page-back-row">
+            <button type="button" class="page-back-btn" id="page-back-gallery">← Back to 3D corridor</button>
+            <button type="button" class="page-back-btn" id="page-back-list">All 40 projects ↗</button>
+          </div>
+
+          <h2 class="page-title" id="page-title"></h2>
+          <p class="page-artist" id="page-subtitle"></p>
+          <p class="page-desc" id="page-desc"></p>
+          <p class="page-caption-line" id="page-caption"></p>
+          <p class="page-tax-note">Concept visualisations and on-site installation photographs are labelled individually per frame.</p>
+
+          <div id="page-film-slot"></div>
+
+          <div class="page-options">
+            <div>
+              <div class="opt-group-label">
+                <span>Project Type</span>
+                <span class="opt-group-val" id="opt-val-type">Exhibition Booth</span>
+              </div>
+              <div class="opt-chips">
+                <button type="button" class="opt-chip is-selected" data-opt-group="type" data-opt-val="Exhibition Booth">Exhibition Booth</button>
+                <button type="button" class="opt-chip" data-opt-group="type" data-opt-val="Event Stage">Event Stage</button>
+                <button type="button" class="opt-chip" data-opt-group="type" data-opt-val="Display / Installation">Display / Installation</button>
+                <button type="button" class="opt-chip" data-opt-group="type" data-opt-val="Branding &amp; Signage">Branding &amp; Signage</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="opt-group-label">
+                <span>Space / Scale</span>
+                <span class="opt-group-val" id="opt-val-scale">6 × 6 m</span>
+              </div>
+              <div class="opt-chips">
+                <button type="button" class="opt-chip" data-opt-group="scale" data-opt-val="3 × 3 m">3 × 3 m</button>
+                <button type="button" class="opt-chip is-selected" data-opt-group="scale" data-opt-val="6 × 6 m">6 × 6 m</button>
+                <button type="button" class="opt-chip" data-opt-group="scale" data-opt-val="9 × 9 m+">9 × 9 m+</button>
+                <button type="button" class="opt-chip" data-opt-group="scale" data-opt-val="Custom / TBD">Custom / TBD</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="opt-group-label">
+                <span>Deliverables</span>
+                <span class="opt-group-val" id="opt-val-deliverables">3D Model + Renders</span>
+              </div>
+              <div class="opt-chips">
+                <button type="button" class="opt-chip is-selected" data-opt-group="deliverables" data-opt-val="3D Model + Renders">3D Model + Renders</button>
+                <button type="button" class="opt-chip" data-opt-group="deliverables" data-opt-val="Layout + Technicals">Layout + Technicals</button>
+                <button type="button" class="opt-chip" data-opt-group="deliverables" data-opt-val="Complete Package">Complete Package</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="opt-group-label">
+                <span>Reference Focus</span>
+                <span class="opt-group-val" id="opt-val-stage">3D Concept</span>
+              </div>
+              <div class="frame-chips">
+                <button type="button" class="frame-chip is-selected" data-opt-group="stage" data-opt-val="3D Concept">
+                  <span class="frame-mini"><img src="" alt="" referrerpolicy="no-referrer" /></span>
+                  <span class="frame-chip-label">3D Concept</span>
+                </button>
+                <button type="button" class="frame-chip" data-opt-group="stage" data-opt-val="On-Site Build">
+                  <span class="frame-mini is-oak"><img src="" alt="" referrerpolicy="no-referrer" /></span>
+                  <span class="frame-chip-label">On-Site Build</span>
+                </button>
+                <button type="button" class="frame-chip" data-opt-group="stage" data-opt-val="Full Production">
+                  <span class="frame-mini is-dark"><img src="" alt="" referrerpolicy="no-referrer" /></span>
+                  <span class="frame-chip-label">Full Production</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-buy-row">
+            <div class="qty-stepper" aria-label="Reference count">
+              <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease">−</button>
+              <span id="page-qty">1</span>
+              <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase">+</button>
+            </div>
+            <button type="button" class="add-bag-btn" id="add-to-brief-btn">ADD TO ENQUIRY BRIEF</button>
+          </div>
+
+          <div class="page-accordions">
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span>Design Scope &amp; Deliverables</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-body">
+                  Concepts include spatial layout planning, 3D modelling, material &amp; lighting direction, and high-resolution presentation renders ready for stakeholder or client review.
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span>Concept Renders vs. On-Site Photos</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-body">
+                  Every image in this portfolio clearly indicates whether it is a 3D concept proposal, an AI-refined presentation render, or a photograph of an installed space.
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button type="button" class="acc-trigger" aria-expanded="false">
+                <span>Enquiry &amp; Review Process</span>
+                <span class="acc-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-body">
+                  Add reference projects to your brief and send them directly via WhatsApp (+966 51 137 7306) or download a text copy. Sending an enquiry is for design review and does not create a booking.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="collection-band" id="collection-band">
+        <h3 class="collection-heading">MORE FROM THE ARCHIVE</h3>
+        <div class="collection-row" id="collection-row"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. List View (All 40 Projects) -->
+  <section id="list" aria-label="All portfolio projects">
+    <div class="list-head">
+      <div>
+        <h2 class="list-heading">IJASHUL HAQUE — ALL 40 PROJECTS</h2>
+        <p class="list-count" id="list-count">Showing 40 of 40 projects</p>
+      </div>
+      <div class="list-filters">
+        <button type="button" class="filter-tab is-active" data-list-cat="ALL">All</button>
+        <button type="button" class="filter-tab" data-list-cat="Events">Events</button>
+        <button type="button" class="filter-tab" data-list-cat="Exhibitions">Exhibitions</button>
+        <button type="button" class="filter-tab" data-list-cat="Installations">Installations</button>
+        <button type="button" class="filter-tab" data-list-cat="Trophies">Trophies</button>
+        <button type="button" class="filter-tab" data-list-cat="SAVED">Saved</button>
+        <button type="button" class="filter-tab is-active" data-list-stage="ALL">All stages</button>
+        <button type="button" class="filter-tab" data-list-stage="ONSITE">On-site</button>
+        <button type="button" class="filter-tab" data-list-stage="CONCEPT">3D Concepts</button>
+      </div>
+    </div>
+    <div class="list-grid" id="list-grid"></div>
+  </section>
+
+  <!-- 7. About & Direct Enquiry Page -->
+  <section id="info-page" aria-label="About Ijashul Haque and portfolio enquiries">
+    <div class="info-container">
+      <div class="info-hero">
+        <div>
+          <p class="info-kicker">IJASHUL HAQUE · EVENT &amp; EXHIBITION DESIGNER</p>
+          <h2 class="info-title">I shape ideas into spaces.</h2>
+          <p class="info-lead">
+            I’m Ijashul Haque. I design exhibition booths, event stages and branded spaces through 3D concepts and presentation renders — from the first sketch to the final presentation.
+          </p>
+        </div>
+        <div class="info-contacts">
+          <a class="info-contact-card" id="info-wa-link" href="https://wa.me/966511377306?text=Hello%20Ijashul%20Haque%2C%20I%20have%20a%20portfolio%20enquiry." target="_blank" rel="noopener noreferrer">
+            <span>CHAT ON WHATSAPP</span>
+            <strong>+966 51 137 7306 ↗</strong>
+          </a>
+          <a class="info-contact-card" id="info-tel-link" href="tel:+966585713603">
+            <span>ALTERNATE PHONE</span>
+            <strong>+966 58 571 3603 ↗</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="info-process">
+        <h3 class="info-section-title">The Design Process</h3>
+        <div class="info-3col">
+          <div class="info-step">
+            <span class="info-step-num">01 / DISCOVER</span>
+            <h3>Explore the brief.</h3>
+            <p>Study the brand, space, purpose and visual references.</p>
+          </div>
+          <div class="info-step">
+            <span class="info-step-num">02 / DEFINE</span>
+            <h3>Set the direction.</h3>
+            <p>Develop a clear concept, layout and material direction.</p>
+          </div>
+          <div class="info-step">
+            <span class="info-step-num">03 / DEVELOP</span>
+            <h3>Bring it into view.</h3>
+            <p>Explore the concept in 3D and refine the visual presentation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-process">
+        <h3 class="info-section-title">Related Design Studies</h3>
+        <div class="info-3col">
+          <div class="info-step">
+            <div class="info-study-img">
+              <img src="assets/service-branding-concept.webp" alt="Logo design and branding concept" loading="lazy" referrerpolicy="no-referrer" />
+            </div>
+            <span class="info-step-num">01 · BRAND IDENTITY</span>
+            <h3>Logo design &amp; branding</h3>
+            <p>A visual identity that carries across your logo, event graphics and branded touchpoints.</p>
+          </div>
+          <div class="info-step">
+            <div class="info-study-img">
+              <img src="assets/service-fabrication-concept.webp" alt="Production design study" loading="lazy" referrerpolicy="no-referrer" />
+            </div>
+            <span class="info-step-num">02 · BUILT FOR THE SPACE</span>
+            <h3>Production design studies</h3>
+            <p>Concept studies explore material finishes and how booths, stages and display units might be assembled.</p>
+          </div>
+          <div class="info-step">
+            <div class="info-study-img">
+              <img src="assets/service-photography-concept.webp" alt="Photography and videography concept" loading="lazy" referrerpolicy="no-referrer" />
+            </div>
+            <span class="info-step-num">03 · MOMENTS IN FOCUS</span>
+            <h3>Photography &amp; videography</h3>
+            <p>Selected event imagery and visual studies document the spaces, details and moments behind the portfolio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-brief-grid">
+        <div class="brief-form-box">
+          <p class="info-kicker">DIRECT ENQUIRY FORM</p>
+          <h3 class="info-section-title" style="margin-bottom:8px;">Start a conversation</h3>
+          <form id="info-brief-form">
+            <div class="brief-fields">
+              <label class="brief-field">
+                Your name
+                <input name="name" placeholder="Name or company" required />
+              </label>
+              <label class="brief-field">
+                Project type
+                <select name="type">
+                  <option>Exhibition booth</option>
+                  <option>Event stage / environment</option>
+                  <option>Display / installation</option>
+                  <option>Logo design / branding</option>
+                  <option>Production design study</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="brief-field">
+                Space / dimensions
+                <input name="size" placeholder="e.g. 6 × 6 m, or not decided" />
+              </label>
+              <label class="brief-field">
+                Target date
+                <input name="date" type="date" />
+              </label>
+              <label class="brief-field is-wide">
+                Project notes
+                <textarea name="description" rows="4" placeholder="What do you need? Include the setting, purpose and any references you have." required></textarea>
+              </label>
+            </div>
+            <div class="brief-actions">
+              <button type="submit" name="action" value="download" class="btn-outline">Download copy ↓</button>
+              <button type="submit" name="action" value="whatsapp" class="btn-ink">Continue on WhatsApp ↗</button>
+            </div>
+            <p id="info-brief-status" role="status" style="font-family:var(--font-mono);font-size:11px;margin-top:10px;color:var(--ink-60);"></p>
+          </form>
+        </div>
+
+        <div class="brief-form-box">
+          <p class="info-kicker">GUIDED PROJECT INTERVIEW</p>
+          <h3 class="info-section-title" style="margin-bottom:14px;">Build a structured brief</h3>
+          <div id="interview-box"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Slide-over Project Brief Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="brief-drawer" aria-label="Project enquiry brief drawer">
+    <div class="drawer-head">
+      <h2 class="drawer-title">YOUR ENQUIRY BRIEF</h2>
+      <button type="button" class="drawer-close" id="drawer-close" aria-label="Close drawer">×</button>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+    <div class="drawer-foot">
+      <div class="drawer-subtotal">
+        <span>Selected References</span>
+        <span id="drawer-count">0 references</span>
+      </div>
+      <button type="button" class="btn-outline" id="drawer-download-btn" style="width:100%;">DOWNLOAD BRIEF (.TXT) ↓</button>
+      <button type="button" class="drawer-checkout" id="drawer-whatsapp-btn">CONTINUE ON WHATSAPP →</button>
+    </div>
+  </aside>
+
+  <!-- 9. Search Modal (⌘K) -->
+  <div class="modal-backdrop" id="search-modal" role="dialog" aria-modal="true" aria-label="Search projects">
+    <div class="search-dialog">
+      <div class="search-dialog-top">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.5-3.5"></path>
+        </svg>
+        <input id="search-input" type="search" placeholder="Search 40 projects (stages, booths, trophies, on-site)..." autocomplete="off" />
+        <button type="button" class="opt-chip" id="search-close" style="height:28px;">ESC</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- 10. Fullscreen Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Fullscreen artwork viewer">
+    <div class="lb-bar">
+      <span id="lb-counter">1 / 1</span>
+      <div class="lb-controls">
+        <button type="button" class="lb-btn" id="lb-prev" aria-label="Previous image">← Prev</button>
+        <button type="button" class="lb-btn" id="lb-next" aria-label="Next image">Next →</button>
+        <button type="button" class="lb-btn" id="lb-zoom">Zoom</button>
+        <button type="button" class="lb-btn" id="lb-close" aria-label="Close fullscreen">Close ✕</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <img id="lb-img" src="" alt="" referrerpolicy="no-referrer" />
+    </div>
+    <div class="lb-foot" id="lb-caption"></div>
+  </div>
+
+  <script type="module" src="gallery-experience.js"></script>
+</body>
+</html>
